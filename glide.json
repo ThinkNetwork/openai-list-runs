@@ -1,9 +1,8 @@
-
 [
   {
     "kind": "column",
-    "name": "OpenAI (Assistants)",
-    "description": "Create, modify and run OpenAI Assistants.",
+    "name": "List OpenAI Thread Runs",
+    "description": "Retrieve all runs from a specific conversation thread in OpenAI's API, with optional pagination and filtering.",
     "author": "Gavin Horne <gavin@thinknetwork.com.au>",
     "params": [
       {
@@ -12,18 +11,33 @@
         "type": "string"
       },
       {
-        "name": "endpoint",
-        "displayName": "API Endpoint (Required)",
+        "name": "thread_id",
+        "displayName": "Thread ID (Required)",
         "type": "string"
       },
       {
-        "name": "body",
-        "displayName": "Body (JSON Schema Required)",
+        "name": "limit",
+        "displayName": "Limit (Optional, Number of results)",
+        "type": "number"
+      },
+      {
+        "name": "order",
+        "displayName": "Order (asc/desc, Optional)",
         "type": "string"
       },
       {
-        "name": "json",
-        "displayName": "JSON Schema (Output)",
+        "name": "after",
+        "displayName": "After Run ID (Optional, for pagination)",
+        "type": "string"
+      },
+      {
+        "name": "before",
+        "displayName": "Before Run ID (Optional, for pagination)",
+        "type": "string"
+      },
+      {
+        "name": "include",
+        "displayName": "Include Fields (Optional, comma separated)",
         "type": "string"
       }
     ],
